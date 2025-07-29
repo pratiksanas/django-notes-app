@@ -11,19 +11,19 @@ pipeline{
         }
         stage("Code Build"){
             steps{
-            dockerbuild("notes-app","latest")
+            docker_build("notes-app","latest")
             }
         }
         stage("Push to DockerHub"){
             steps{
-                dockerpush("dockerHubCreds","notes-app","latest")
+                docker_push("dockerHubCreds","notes-app","latest")
             }
         }
-        stage("Deploy"){
-            steps{
-                deploy()
-            }
-        }
+        // stage("Deploy"){
+        //     steps{
+        //         deploy()
+        //     }
+        // }
         
     }
 }
