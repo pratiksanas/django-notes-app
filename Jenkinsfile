@@ -8,6 +8,7 @@ pipeline{
             clone("https://github.com/pratiksanas/django-notes-app.git","main")
             }
         }
+        
         // stage("Code Build"){
         //     steps{
         //     docker_build("notes-app","latest")
